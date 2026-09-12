@@ -1,11 +1,15 @@
-<h1>Books</h1>
-<ul>
-    {% for book in books %}
-        <li>
-            <strong>{{ book.title }}</strong>
-            ({{ book.pages }} pages) —
-            Publisher: {{ book.publisher.name }} —
-            Reviews: {{ book.review_set.count }}
-        </li>
-    {% endfor %}
-</ul>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Books</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong>
+                ({{ book.pages }} pages) —
+                Publisher: {{ book.publisher.name }} —
+                Reviews: {{ book.review_set.count }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,15 +1,19 @@
-<h1>Publishers</h1>
-<ul>
-    {% for publisher in publishers %}
-        <li>
-            <strong>{{ publisher.name }}</strong>
-            <ul>
-                {% for book in publisher.book_set.all %}
-                    <li>{{ book.title }}</li>
-                {% empty %}
-                    <li>No books yet</li>
-                {% endfor %}
-            </ul>
-        </li>
-    {% endfor %}
-</ul>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Publishers</h1>
+    <ul>
+        {% for publisher in publishers %}
+            <li>
+                <strong>{{ publisher.name }}</strong>
+                <ul>
+                    {% for book in publisher.book_set.all %}
+                        <li>{{ book.title }}</li>
+                    {% empty %}
+                        <li>No books yet</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

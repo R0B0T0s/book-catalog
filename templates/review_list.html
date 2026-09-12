@@ -1,10 +1,14 @@
-<h1>Reviews</h1>
-<ul>
-    {% for review in reviews %}
-        <li>
-            <em>{{ review.body }}</em><br>
-            Book: {{ review.book.title }} —
-            Publisher: {{ review.book.publisher.name }}
-        </li>
-    {% endfor %}
-</ul>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Reviews</h1>
+    <ul>
+        {% for review in reviews %}
+            <li>
+                <em>{{ review.body }}</em><br>
+                Book: {{ review.book.title }} —
+                Publisher: {{ review.book.publisher.name }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
