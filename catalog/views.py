@@ -8,6 +8,7 @@ class BookListView(ListView):
     context_object_name="books"
 
 
+
 class PublisherListView(ListView):
     model=Publisher
     template_name="publisher_list.html"
